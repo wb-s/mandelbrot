@@ -4,7 +4,7 @@ The **Mandlebrot Set** is the set of complex numbers $c$ such that iterations of
 
 This is a program for a simple Mandlebrot Set viewer in Java.
 
-If you have Java enabled, you can run the project, click areas to zoom, and/or press the left arrow key to go back.
+If you have Java enabled, you can run the project to view. Click areas to zoom and/or press the left arrow key to go back.
 
 ### Tasks
 Multi-threading (6/25).
