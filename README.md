@@ -1,8 +1,10 @@
 # mandlebrot
 
-Simple Mandlebrot set viewer in Java.
+The **Mandlebrot Set** is the set of complex numbers c such that iterations of $f_c(z)=z^2+c$ do not diverge to infinity. Colorizations of the rate of divergence for points $c$ on the complex plane yield amusing, infinitely labyrinthine ornamentations.
 
-Run project, click to zoom, press left arrow key to go back.
+This is a program for a simple Mandlebrot Set viewer in Java.
+
+If you have Java enabled, you can run the project, click areas to zoom, and/or press the left arrow key to go back.
 
 # to-do
 Multi-threading (6/25).
