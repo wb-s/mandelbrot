@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 import java.util.Stack;
 
 
-public class Mandlebrot extends JPanel {
+public class Mandelbrot extends JPanel {
 	private static final long serialVersionUID = 7148504528835036003L;
 	private static double size = 4.0; // complex plane is size units in width and length
 	private static int n	= 1000; // window is n x n in pixels
@@ -25,7 +25,7 @@ public class Mandlebrot extends JPanel {
 	private static Stack<double[]> origins = new Stack<double[]>(); // track origins for zooming out
 	private static double zoom = 2.0; // modify to alter brightness scheme on zoom
 
-	public Mandlebrot() {
+	public Mandelbrot() {
 		addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				double[] center = new double[]{xC, yC};
@@ -89,7 +89,7 @@ public class Mandlebrot extends JPanel {
 		
 		
 		SwingUtilities.invokeLater(() -> {
-			var panel = new Mandlebrot();
+			var panel = new Mandelbrot();
 			panel.setBackground(Color.WHITE);
 			panel.setFocusable(true);
 			var frame = new JFrame("Mandelbrot");
