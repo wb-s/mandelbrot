@@ -14,21 +14,23 @@ import java.util.Stack;
 
 public class Mandlebrot extends JPanel {
 	private static final long serialVersionUID = 7148504528835036003L;
-	private static double size = 4.0;
-	private static int n	= 1000;
-	private static int max	= 255;
-	private static double x0 = -size/2;
-	private static double y0 = size/2;
-	private static double xC = 0;
-	private static double yC = 0;
-	private static double scaleFactor = size/n;
-	private static Stack<double[]> origins = new Stack<double[]>();
+	private static double size = 4.0; // complex plane is size units in width and length
+	private static int n	= 1000; // window is n x n in pixels
+	private static int max	= 255; // iterate through hex color values
+	private static double x0 = -size/2; // set window origin
+	private static double y0 = size/2; // set window origin
+	private static double xC = 0; // set complex plane origin
+	private static double yC = 0; // set complex plane origin
+	private static double scaleFactor = size/n; // translate complex plane to pixels
+	private static Stack<double[]> origins = new Stack<double[]>(); // track origins for zooming out
+	private static double zoom = 2.0; // modify to alter brightness scheme on zoom
 
 	public Mandlebrot() {
 		addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				double[] center = new double[]{xC, yC};
 				origins.push(center);
+				zoom = (zoom * 2) - (0.5 * zoom);
 				xC = x0 + (scaleFactor * e.getX());
 				yC = y0 - (scaleFactor * e.getY());
 				size = size/2.0;
@@ -42,6 +44,7 @@ public class Mandlebrot extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 					double[] center = origins.pop();
+					zoom = (zoom + (zoom / 3)) / 2;
 					xC = center[0];
 					yC = center[1];
 					size = size*2.0;
@@ -56,7 +59,6 @@ public class Mandlebrot extends JPanel {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		System.out.printf("");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				double a = x0 + (i * scaleFactor);
@@ -70,10 +72,12 @@ public class Mandlebrot extends JPanel {
 		}
 	}
 	
+
+	
 	public static int mand(Complex z0, int max) {
 		Complex z = z0;
 		for (int t = 0; t < max; t++) {
-			if (z.abs() > 2.0) {
+			if (z.abs() > zoom) {
 				return t;
 			}
 			z = Complex.ad(Complex.mult(z, z), z0);
@@ -82,6 +86,8 @@ public class Mandlebrot extends JPanel {
 	}
 
 	public static void main(String[] args) {
+		
+		
 		SwingUtilities.invokeLater(() -> {
 			var panel = new Mandlebrot();
 			panel.setBackground(Color.WHITE);
