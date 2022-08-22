@@ -7,6 +7,5 @@ This is a program for a Mandlebrot Set viewer in Java.
 If you have Java enabled, you can run the project to view the Mandlebrot Set. Click areas to zoom and press the left arrow key to go back.
 
 ### Tasks
-Multi-threading.
 
-Coloring options.
+Non-grayscale colorizations.
