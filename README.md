@@ -7,6 +7,6 @@ This is a program for a Mandelbrot Set viewer in Java.
 If you have Java enabled, you can run the project to view the Mandelbrot Set. Click areas to zoom and press the left arrow key to go back.
 
 ### Tasks
-Multi-threading.
+- [x] Multi-threading. 
 
-Coloring options.
+- [] Coloring options.
