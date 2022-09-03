@@ -9,4 +9,4 @@ If you have Java enabled, you can run the project to view the Mandelbrot Set. Cl
 ### Tasks
 - [x] Multi-threading. 
 
-- [] Coloring options.
+- [ ] Coloring options.
