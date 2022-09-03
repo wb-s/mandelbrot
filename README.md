@@ -10,3 +10,5 @@ If you have Java enabled, you can run the project to view the Mandelbrot Set. Cl
 - [x] Multi-threading. 
 
 - [ ] Coloring options.
+
+- [ ] Refactor.
