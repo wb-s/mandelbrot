@@ -11,6 +11,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Stack;
 
+
 public class Mandelbrot extends JPanel implements CalcListener {
     private static double size = 4.0; // complex plane is size units in width and length
     private static int n    = 1000; // window is n x n in pixels
